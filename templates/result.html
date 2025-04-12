@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Processing Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Processing Results</h1>
+
+        <div class="results-container">
+            <div class="result">
+                <h3>Intermediate 1 (30% progress)</h3>
+                <img src="{{ url_for('serve_files', filename=intermediate1.split('/')[-1]) }}" alt="Intermediate 1">
+                <p><a href="{{ url_for('serve_files', filename=intermediate1_pgm.split('/')[-1]) }}" download>Download Intermediate 1 (PGM)</a></p>
+            </div>
+            <div class="result">
+                <h3>Intermediate 2 (60% progress)</h3>
+                <img src="{{ url_for('serve_files', filename=intermediate2.split('/')[-1]) }}" alt="Intermediate 2">
+                <p><a href="{{ url_for('serve_files', filename=intermediate2_pgm.split('/')[-1]) }}" download>Download Intermediate 2 (PGM)</a></p>
+            </div>
+            <div class="result">
+                <h3>Final Image</h3>
+                <img src="{{ url_for('serve_files', filename=final.split('/')[-1]) }}" alt="Final Output">
+                <p><a href="{{ url_for('serve_files', filename=final_pgm.split('/')[-1]) }}" download>Download Final Image (PGM)</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
